@@ -52,7 +52,7 @@ class MD5HasherTest extends TestCase
         $password = md5('password');
 
         $passwordCheck = $this->hasher->check('password', $password);
-        
+
         $this->assertTrue($passwordCheck);
     }
 }

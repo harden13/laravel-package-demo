@@ -26,7 +26,9 @@ class MD5HasherTest extends TestCase
     public function testMD5HasherMake()
     {
         $password = md5('password');
+
         $passwordtwo = $this->hasher->make('password');
+
         $this->assertEquals($password, $passwordtwo);
     }
 
@@ -36,7 +38,9 @@ class MD5HasherTest extends TestCase
     public function testMD5HasherMakeWithSalt()
     {
         $password = md5('passwordtest');
+
         $passwordtwo = $this->hasher->make('password', ['salt' => 'test']);
+
         $this->assertEquals($password, $passwordtwo);
     }
 
@@ -46,7 +50,9 @@ class MD5HasherTest extends TestCase
     public function testMD5HasherCheck()
     {
         $password = md5('password');
+
         $passwordCheck = $this->hasher->check('password', $password);
+        
         $this->assertTrue($passwordCheck);
     }
 }
